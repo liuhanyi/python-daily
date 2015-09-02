@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import MySQLdb
+import requests
 
 def getConnection(url, user, passwd, db=None, charset='utf8'):
     if db == None:
@@ -24,5 +25,9 @@ def generateAccount():
     cur.close()
     conn.close()
 
+
+def getUserAgent():
+    print(requests.get('https://httpbin.org/user-agent').text)
+
 if __name__ == '__main__':
-    generateAccount()
+    getUserAgent()
