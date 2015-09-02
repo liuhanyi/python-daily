@@ -10,7 +10,8 @@ def getConnection(url, user, passwd, db=None, charset='utf8'):
 
 
 def generateAccount():
-    conn = getConnection('10.10.90.156','develop', 'p3m12d', 'prague')
+    # change the url
+    conn = getConnection('192.168.56.10','develop', '123456', 'prague')
     cur = conn.cursor()
 
     sql = "replace into t_origin_account_user(user_name, name, role_id) values('test{}', '测试', 3)"
